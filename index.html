@@ -80,7 +80,10 @@
         <div class="question" id="question">Loading questions...</div>
         <div class="pro-tip" id="pro-tip">Loading pro tip...</div>
         <div class="timer" id="timer">15</div>
-        <div class="instructions">Press <strong>Return</strong> (or Enter) to see the next question. Press <strong>Space</strong> to add 15 seconds.</div>
+        <div class="instructions">
+            Press <strong>Return</strong> (or Enter) to see the next question. 
+            Press <strong>Space</strong> to add 15 seconds.
+        </div>
         <div class="button-container">
             <button class="button" id="next-question-btn">Next Question</button>
             <button class="button" id="add-time-btn">Add 15 Seconds</button>
@@ -89,95 +92,98 @@
 
     <script>
         const questionsWithTips = [
+
+
+
             { question: "What are your biggest strengths?", tip: "Choose strengths that align with the role you're applying for." },
-            { question: "What are your weaknesses?", tip: "Mention a weakness you are actively working to improve." },
-            { question: "Why do you want to work here?", tip: "Research the company and align your goals with its mission." },
-            { question: "Tell me about a time you solved a challenging problem.", tip: "Use the STAR method: Situation, Task, Action, Result." },
-            { question: "Where do you see yourself in 5 years?", tip: "Demonstrate ambition while remaining realistic." },
-            { question: "Why should we hire you?", tip: "Highlight your unique skills and experience." },
-            { question: "What is your biggest achievement?", tip: "Choose an achievement that showcases your impact." },
-            { question: "Tell me about a time you worked as part of a team.", tip: "Emphasize collaboration and conflict resolution." },
-            { question: "How do you handle stress or pressure?", tip: "Provide examples of strategies you use to stay focused." },
-            { question: "How does someone's impression of you change after they meet you?", tip: "Provide examples of how you make a positive impression and what stands out about you." },
-            { question: "What are your biggest strengths?", tip: "Choose strengths that align with the role you're applying for." },
-            { question: "What are your weaknesses?", tip: "Mention a weakness you are actively working to improve." },
-            { question: "Why do you want to work here?", tip: "Research the company and align your goals with its mission." },
-            { question: "Tell me about a time you solved a challenging problem.", tip: "Use the STAR method: Situation, Task, Action, Result." },
-            { question: "Where do you see yourself in 5 years?", tip: "Demonstrate ambition while remaining realistic." },
-            { question: "Why should we hire you?", tip: "Highlight your unique skills and experience." },
-            { question: "What is your biggest achievement?", tip: "Choose an achievement that showcases your impact." },
-            { question: "Tell me about a time you worked as part of a team.", tip: "Emphasize collaboration and conflict resolution." },
-            { question: "How do you handle stress or pressure?", tip: "Provide examples of strategies you use to stay focused." },
-            { question: "How does someone's impression of you change after they meet you?", tip: "Provide examples of how you make a positive impression and what stands out about you." },
-            { question: "Tell us of a time you received constructive feedback on rotations you did not agree with. How did you handle that situation?", tip: "Use this to showcase your self-reflection and evaluation skills. Make sure to talk about what you learned." },
-            { question: "Tell us about a time when a supervisor or professor gave you an assignment/responsibility and you did not deliver.", tip: "Describe the impact it had and how you took accountability." },
-            { question: "What skills or strengths do you have coming into a pharmacy residency program?", tip: "Highlight specific clinical or personal strengths that will benefit the program." },
-            { question: "What is one thing you would change about yourself and why?", tip: "Be honest, but also demonstrate self-awareness and a willingness to grow." },
-            { question: "What pharmacy contribution do you want to be remembered by when you complete your residency program?", tip: "Think about the impact you want to leave in the field and on your colleagues." },
-            { question: "Describe a time in which you felt it was necessary to modify or change a recommendation to respond to the needs of a patient.", tip: "Think about what made you feel it was necessary to modify your actions and the changes you made." },
-            { question: "Describe a time you went over and beyond for a patient", tip: "STAR method: Situation, Task, Action, Result." },
-            { question: "What is the most important part of your CV?", tip: "Highlight your most relevant experience or skills to the role you are applying for." },
-            { question: "What is something not on your CV you're the most proud of?", tip: "Share an experience or achievement that showcases your personality and values." },
-            { question: "How do you maintain balance?", tip: "Discuss what you do outside of pharmacy to recharge and stay healthy." },
-            { question: "How would you evaluate your clinical skills?", tip: "Create a scale (e.g., 1-10) to orient yourself and provide examples to back your rating." },
-            { question: "When did something go wrong that you weren’t expecting?", tip: "Discuss how you adapted and problem-solved when things didn’t go as planned." },
-            { question: "Describe a time when you worked with a team and someone was not pulling their weight.", tip: "STAR method: Situation, Task, Action, Result." },
-            { question: "Tell us about a time when your recommendation was rejected by a patient? Provider? Preceptor?", tip: "Explain how you handled the rejection and how you adapted your approach." },
-            { question: "What is your greatest accomplishment?", tip: "Choose an accomplishment that demonstrates your capabilities and impact." },
-            { question: "Describe a situation where you felt you had not communicated well. How did you correct the situation?", tip: "Show your communication skills and how you handle misunderstandings." },
-            { question: "When has your integrity been tested?", tip: "Describe a situation that challenged your ethical principles and how you handled it." },
-            { question: "When could you not solve the problem?", tip: "Show that you're comfortable with acknowledging limits and seeking help when needed." },
-            { question: "Tell about a situation where you assisted a co-worker.", tip: "Give an example that shows your teamwork and willingness to help others." },
-            { question: "Tell me about a time when you had to resolve a conflict.", tip: "Use the STAR method to describe how you managed the conflict and the outcome." },
-            { question: "Describe a situation where you were responsible for getting others to make a change.", tip: "Explain the change, how you influenced others, and the results." },
-            { question: "Give a specific example of a time you had to deal with an upset co-worker, patient, or other customer. What was the person upset about and how did you handle it? What was the outcome?", tip: "Demonstrate emotional intelligence and conflict resolution skills." },
-            { question: "Have you ever had to 'sell' an idea to your co-workers or group? How did you do it? Did they 'buy' it?", tip: "Describe how you presented the idea and the steps you took to gain buy-in." },
-            { question: "What is the toughest group that you’ve had to get cooperation from? Describe how you handled it. What was the outcome?", tip: "Show how you manage group dynamics and influence others." },
-            { question: "Give a specific example of a situation where the group of people you work with on a regular basis had a serious conflict. What was the conflict about? How were you involved in the conflict and what was the outcome?", tip: "Use this to demonstrate leadership and conflict management." },
-            { question: "Describe a time when you've had to work with strong-willed peers. What did you do? How did you handle them so you could influence their decisions?", tip: "Share how you used persuasion and collaboration to achieve a common goal." },
-            { question: "Describe a time when you took personal accountability for a conflict and initiated contact with the individual(s) involved to explain your actions. What steps did you take? What was the result?", tip: "This is an opportunity to demonstrate maturity and accountability." },
-            { question: "Describe the most challenging negotiation in which you were involved. What did you do? What were the results for you? What were the results for the other party?", tip: "Highlight your negotiation skills and ability to achieve win-win outcomes." },
-            { question: "Tell me specifically what you have done to create an atmosphere of trust and empowerment within your sphere of influence. What tangible results have you seen from your efforts?", tip: "Show how your actions built a positive environment and the impact it had." },
-            { question: "Describe a negative work experience you learned from. Describe the circumstances and give an example to show you applied the learning to a work situation.", tip: "Be honest about mistakes, but focus on how you grew and applied the lessons learned." },
-            { question: "Describe a time where you've had a difficult conversation with someone. How did you prepare?", tip: "Show how you prepared and handled sensitive conversations with professionalism." },
-            { question: "When have you had to work with someone different than you to accomplish a goal? How were they different than you?", tip: "Emphasize your ability to work across differences and how you achieved a common goal." },
-            { question: "Everyone has made some poor decisions or has done something that just did not turn out right. Give an example of when this happened to you. What did you learn? What would you do differently?", tip: "This is an opportunity to show how you learn from mistakes and improve over time." },
-            { question: "Tell us about a time when you had to analyze information and make a recommendation. What kind of thought process did you go through? What was your reasoning behind your decision?", tip: "This shows your decision-making and analytical skills." },
-            { question: "Describe a time when one of your staff or your work team was working above work expectations. What was your response? How did the other party/parties respond?", tip: "Emphasize recognition and encouragement of exceptional performance." },
-            { question: "What would your colleagues say about you?", tip: "Be honest and choose traits that reflect positively on your work ethic and collaboration." },
-            { question: "Walk us through a time when you interacted with a difficult patient.", tip: "Demonstrate your ability to stay calm and empathetic under pressure." },
-            { question: "Tell us about a time when you made a recommendation to a provider, preceptor, or healthcare team member that successfully impacted a patient/patient care.", tip: "Show your ability to make informed recommendations and collaborate with the healthcare team." },
-            { question: "How do you handle stress/prevent burnout? What do you like to do outside of pharmacy?", tip: "Provide examples of how you maintain a work-life balance and avoid burnout." },
-            { question: "Talk to us about your involvement in student organizations.", tip: "Highlight leadership, teamwork, and skills you've developed through these experiences." },
-            { question: "What challenges do you anticipate when starting/completing residency?", tip: "Be realistic about the challenges but show enthusiasm for overcoming them." },
-            { question: "If you were a drug, what drug would you be and why?", tip: "Get creative! Choose a drug that reflects your personality or qualities." },
-            { question: "If you had a magic carpet, where are three places you would visit?", tip: "This is a fun, creative question—focus on your interests and passions." },
-            { question: "What shoe would you be and why?", tip: "Choose a shoe that reflects your personality and traits." },
-            { question: "If you were a font, what font would you be and why?", tip: "This is a fun way to showcase your creativity and self-awareness." },
-            { question: "If you were on a deserted island, what three drugs would you take with you?", tip: "Choose drugs that reflect your priorities and problem-solving abilities." },
-            { question: "Can you discuss a time when you encountered a challenge related to DEI in a professional or academic setting? How did you handle it?", tip: "Demonstrate your commitment to diversity, equity, and inclusion and how you handled the situation." },
-            { question: "How do you ensure that you are providing culturally competent care when working with patients from diverse backgrounds?", tip: "Emphasize your cultural competence and strategies to ensure equitable care." },
-            { question: "How would you address a situation where a pharmacy team member is not being respectful of cultural differences or exhibiting behavior that goes against DEI principles?", tip: "Demonstrate your commitment to a respectful, inclusive, and supportive team environment." },
-            { question: "How do you handle time-management during a hectic time?", tip: "Show your ability to prioritize tasks and stay organized during stressful situations." },
-            { question: "If you had not chosen the pharmacy profession, what career would you pursue? Why?", tip: "Provide a thoughtful response that shows your passion for pharmacy." },
-            { question: "Who among all your teachers and mentors has had the most influence on you and why?", tip: "Show how mentorship has shaped you and your professional journey." },
-            { question: "What do you think you will bring to our program?", tip: "Discuss your unique skills, experiences, and perspectives that will benefit the program." },
-            { question: "Tell me about a time you did work you didn’t find valuable. How did you deal with this?", tip: "Show your ability to remain professional even when tasks are not ideal." },
-            { question: "What is the hardest job you have had to perform? Why?", tip: "Be honest, but also emphasize what you learned from the experience." },
-            { question: "Describe a time when you felt overwhelmed and explain how you handled the experience", tip: "Show your resilience and coping strategies in challenging situations." },
-            { question: "Tell me about a time you impacted a patient’s healthcare", tip: "Provide a specific example where your actions made a difference in a patient's care." },
-            { question: "What was your most rewarding moment during your job/experience/rotation/etc.?", tip: "Share an experience that highlights your passion and fulfillment in your work." },
-            { question: "Tell me about a patient that had the greatest impact on you and your perception of pharmacy practice", tip: "Discuss how a patient shaped your perspective or practice as a pharmacist." },
-            { question: "Tell me about a difficult patient and how you were able to make an impact on their health", tip: "Demonstrate your ability to connect with patients and improve outcomes in difficult situations." },
-            { question: "Describe an instance where you had to collaborate with other healthcare professionals to accomplish a goal", tip: "Show your teamwork and communication skills when working with a multidisciplinary team." },
-            { question: "Give me an example of a team situation you have worked in. What was your role within the team? Did you experience any conflicts?", tip: "Demonstrate your role in the team, conflict management, and how you contributed to the goal." },
-            { question: "As a leader in the pharmacy profession, describe a situation where you had to motivate others to accomplish a goal?", tip: "Highlight your leadership skills and ability to inspire others towards a shared objective." },
-            { question: "Tell me about a time when your carefully laid plans were disrupted. How did you handle the disruption?", tip: "Show your problem-solving and adaptability in the face of unexpected challenges." },
-            { question: "Tell me about a time you found a better way of doing a task at work.", tip: "Share how you improved a process or found a more efficient way to achieve a goal." },
-            { question: "Tell me about a time when you took on additional responsibility without being asked.", tip: "Discuss when you took initiative and how it benefited your team." },
-            { question: "What do you consider to be your most important personal qualities?", tip: "Share the traits that you feel define your work ethic and approach to challenges." },
-            { question: "What are some personal goals you're working on? How are you pursuing them?", tip: "Talk about your personal growth and how it complements your professional life." },
-            { question: "What do you do to stay up to date in your field?", tip: "Demonstrate your commitment to continued learning and professional development." }
+                        { question: "What are your weaknesses?", tip: "Mention a weakness you are actively working to improve." },
+                        { question: "Why do you want to work here?", tip: "Research the company and align your goals with its mission." },
+                        { question: "Tell me about a time you solved a challenging problem.", tip: "Use the STAR method: Situation, Task, Action, Result." },
+                        { question: "Where do you see yourself in 5 years?", tip: "Demonstrate ambition while remaining realistic." },
+                        { question: "Why should we hire you?", tip: "Highlight your unique skills and experience." },
+                        { question: "What is your biggest achievement?", tip: "Choose an achievement that showcases your impact." },
+                        { question: "Tell me about a time you worked as part of a team.", tip: "Emphasize collaboration and conflict resolution." },
+                        { question: "How do you handle stress or pressure?", tip: "Provide examples of strategies you use to stay focused." },
+                        { question: "How does someone's impression of you change after they meet you?", tip: "Provide examples of how you make a positive impression and what stands out about you." },
+                        { question: "What are your biggest strengths?", tip: "Choose strengths that align with the role you're applying for." },
+                        { question: "What are your weaknesses?", tip: "Mention a weakness you are actively working to improve." },
+                        { question: "Why do you want to work here?", tip: "Research the company and align your goals with its mission." },
+                        { question: "Tell me about a time you solved a challenging problem.", tip: "Use the STAR method: Situation, Task, Action, Result." },
+                        { question: "Where do you see yourself in 5 years?", tip: "Demonstrate ambition while remaining realistic." },
+                        { question: "Why should we hire you?", tip: "Highlight your unique skills and experience." },
+                        { question: "What is your biggest achievement?", tip: "Choose an achievement that showcases your impact." },
+                        { question: "Tell me about a time you worked as part of a team.", tip: "Emphasize collaboration and conflict resolution." },
+                        { question: "How do you handle stress or pressure?", tip: "Provide examples of strategies you use to stay focused." },
+                        { question: "How does someone's impression of you change after they meet you?", tip: "Provide examples of how you make a positive impression and what stands out about you." },
+                        { question: "Tell us of a time you received constructive feedback on rotations you did not agree with. How did you handle that situation?", tip: "Use this to showcase your self-reflection and evaluation skills. Make sure to talk about what you learned." },
+                        { question: "Tell us about a time when a supervisor or professor gave you an assignment/responsibility and you did not deliver.", tip: "Describe the impact it had and how you took accountability." },
+                        { question: "What skills or strengths do you have coming into a pharmacy residency program?", tip: "Highlight specific clinical or personal strengths that will benefit the program." },
+                        { question: "What is one thing you would change about yourself and why?", tip: "Be honest, but also demonstrate self-awareness and a willingness to grow." },
+                        { question: "What pharmacy contribution do you want to be remembered by when you complete your residency program?", tip: "Think about the impact you want to leave in the field and on your colleagues." },
+                        { question: "Describe a time in which you felt it was necessary to modify or change a recommendation to respond to the needs of a patient.", tip: "Think about what made you feel it was necessary to modify your actions and the changes you made." },
+                        { question: "Describe a time you went over and beyond for a patient", tip: "STAR method: Situation, Task, Action, Result." },
+                        { question: "What is the most important part of your CV?", tip: "Highlight your most relevant experience or skills to the role you are applying for." },
+                        { question: "What is something not on your CV you're the most proud of?", tip: "Share an experience or achievement that showcases your personality and values." },
+                        { question: "How do you maintain balance?", tip: "Discuss what you do outside of pharmacy to recharge and stay healthy." },
+                        { question: "How would you evaluate your clinical skills?", tip: "Create a scale (e.g., 1-10) to orient yourself and provide examples to back your rating." },
+                        { question: "When did something go wrong that you weren’t expecting?", tip: "Discuss how you adapted and problem-solved when things didn’t go as planned." },
+                        { question: "Describe a time when you worked with a team and someone was not pulling their weight.", tip: "STAR method: Situation, Task, Action, Result." },
+                        { question: "Tell us about a time when your recommendation was rejected by a patient? Provider? Preceptor?", tip: "Explain how you handled the rejection and how you adapted your approach." },
+                        { question: "What is your greatest accomplishment?", tip: "Choose an accomplishment that demonstrates your capabilities and impact." },
+                        { question: "Describe a situation where you felt you had not communicated well. How did you correct the situation?", tip: "Show your communication skills and how you handle misunderstandings." },
+                        { question: "When has your integrity been tested?", tip: "Describe a situation that challenged your ethical principles and how you handled it." },
+                        { question: "When could you not solve the problem?", tip: "Show that you're comfortable with acknowledging limits and seeking help when needed." },
+                        { question: "Tell about a situation where you assisted a co-worker.", tip: "Give an example that shows your teamwork and willingness to help others." },
+                        { question: "Tell me about a time when you had to resolve a conflict.", tip: "Use the STAR method to describe how you managed the conflict and the outcome." },
+                        { question: "Describe a situation where you were responsible for getting others to make a change.", tip: "Explain the change, how you influenced others, and the results." },
+                        { question: "Give a specific example of a time you had to deal with an upset co-worker, patient, or other customer. What was the person upset about and how did you handle it? What was the outcome?", tip: "Demonstrate emotional intelligence and conflict resolution skills." },
+                        { question: "Have you ever had to 'sell' an idea to your co-workers or group? How did you do it? Did they 'buy' it?", tip: "Describe how you presented the idea and the steps you took to gain buy-in." },
+                        { question: "What is the toughest group that you’ve had to get cooperation from? Describe how you handled it. What was the outcome?", tip: "Show how you manage group dynamics and influence others." },
+                        { question: "Give a specific example of a situation where the group of people you work with on a regular basis had a serious conflict. What was the conflict about? How were you involved in the conflict and what was the outcome?", tip: "Use this to demonstrate leadership and conflict management." },
+                        { question: "Describe a time when you've had to work with strong-willed peers. What did you do? How did you handle them so you could influence their decisions?", tip: "Share how you used persuasion and collaboration to achieve a common goal." },
+                        { question: "Describe a time when you took personal accountability for a conflict and initiated contact with the individual(s) involved to explain your actions. What steps did you take? What was the result?", tip: "This is an opportunity to demonstrate maturity and accountability." },
+                        { question: "Describe the most challenging negotiation in which you were involved. What did you do? What were the results for you? What were the results for the other party?", tip: "Highlight your negotiation skills and ability to achieve win-win outcomes." },
+                        { question: "Tell me specifically what you have done to create an atmosphere of trust and empowerment within your sphere of influence. What tangible results have you seen from your efforts?", tip: "Show how your actions built a positive environment and the impact it had." },
+                        { question: "Describe a negative work experience you learned from. Describe the circumstances and give an example to show you applied the learning to a work situation.", tip: "Be honest about mistakes, but focus on how you grew and applied the lessons learned." },
+                        { question: "Describe a time where you've had a difficult conversation with someone. How did you prepare?", tip: "Show how you prepared and handled sensitive conversations with professionalism." },
+                        { question: "When have you had to work with someone different than you to accomplish a goal? How were they different than you?", tip: "Emphasize your ability to work across differences and how you achieved a common goal." },
+                        { question: "Everyone has made some poor decisions or has done something that just did not turn out right. Give an example of when this happened to you. What did you learn? What would you do differently?", tip: "This is an opportunity to show how you learn from mistakes and improve over time." },
+                        { question: "Tell us about a time when you had to analyze information and make a recommendation. What kind of thought process did you go through? What was your reasoning behind your decision?", tip: "This shows your decision-making and analytical skills." },
+                        { question: "Describe a time when one of your staff or your work team was working above work expectations. What was your response? How did the other party/parties respond?", tip: "Emphasize recognition and encouragement of exceptional performance." },
+                        { question: "What would your colleagues say about you?", tip: "Be honest and choose traits that reflect positively on your work ethic and collaboration." },
+                        { question: "Walk us through a time when you interacted with a difficult patient.", tip: "Demonstrate your ability to stay calm and empathetic under pressure." },
+                        { question: "Tell us about a time when you made a recommendation to a provider, preceptor, or healthcare team member that successfully impacted a patient/patient care.", tip: "Show your ability to make informed recommendations and collaborate with the healthcare team." },
+                        { question: "How do you handle stress/prevent burnout? What do you like to do outside of pharmacy?", tip: "Provide examples of how you maintain a work-life balance and avoid burnout." },
+                        { question: "Talk to us about your involvement in student organizations.", tip: "Highlight leadership, teamwork, and skills you've developed through these experiences." },
+                        { question: "What challenges do you anticipate when starting/completing residency?", tip: "Be realistic about the challenges but show enthusiasm for overcoming them." },
+                        { question: "If you were a drug, what drug would you be and why?", tip: "Get creative! Choose a drug that reflects your personality or qualities." },
+                        { question: "If you had a magic carpet, where are three places you would visit?", tip: "This is a fun, creative question—focus on your interests and passions." },
+                        { question: "What shoe would you be and why?", tip: "Choose a shoe that reflects your personality and traits." },
+                        { question: "If you were a font, what font would you be and why?", tip: "This is a fun way to showcase your creativity and self-awareness." },
+                        { question: "If you were on a deserted island, what three drugs would you take with you?", tip: "Choose drugs that reflect your priorities and problem-solving abilities." },
+                        { question: "Can you discuss a time when you encountered a challenge related to DEI in a professional or academic setting? How did you handle it?", tip: "Demonstrate your commitment to diversity, equity, and inclusion and how you handled the situation." },
+                        { question: "How do you ensure that you are providing culturally competent care when working with patients from diverse backgrounds?", tip: "Emphasize your cultural competence and strategies to ensure equitable care." },
+                        { question: "How would you address a situation where a pharmacy team member is not being respectful of cultural differences or exhibiting behavior that goes against DEI principles?", tip: "Demonstrate your commitment to a respectful, inclusive, and supportive team environment." },
+                        { question: "How do you handle time-management during a hectic time?", tip: "Show your ability to prioritize tasks and stay organized during stressful situations." },
+                        { question: "If you had not chosen the pharmacy profession, what career would you pursue? Why?", tip: "Provide a thoughtful response that shows your passion for pharmacy." },
+                        { question: "Who among all your teachers and mentors has had the most influence on you and why?", tip: "Show how mentorship has shaped you and your professional journey." },
+                        { question: "What do you think you will bring to our program?", tip: "Discuss your unique skills, experiences, and perspectives that will benefit the program." },
+                        { question: "Tell me about a time you did work you didn’t find valuable. How did you deal with this?", tip: "Show your ability to remain professional even when tasks are not ideal." },
+                        { question: "What is the hardest job you have had to perform? Why?", tip: "Be honest, but also emphasize what you learned from the experience." },
+                        { question: "Describe a time when you felt overwhelmed and explain how you handled the experience", tip: "Show your resilience and coping strategies in challenging situations." },
+                        { question: "Tell me about a time you impacted a patient’s healthcare", tip: "Provide a specific example where your actions made a difference in a patient's care." },
+                        { question: "What was your most rewarding moment during your job/experience/rotation/etc.?", tip: "Share an experience that highlights your passion and fulfillment in your work." },
+                        { question: "Tell me about a patient that had the greatest impact on you and your perception of pharmacy practice", tip: "Discuss how a patient shaped your perspective or practice as a pharmacist." },
+                        { question: "Tell me about a difficult patient and how you were able to make an impact on their health", tip: "Demonstrate your ability to connect with patients and improve outcomes in difficult situations." },
+                        { question: "Describe an instance where you had to collaborate with other healthcare professionals to accomplish a goal", tip: "Show your teamwork and communication skills when working with a multidisciplinary team." },
+                        { question: "Give me an example of a team situation you have worked in. What was your role within the team? Did you experience any conflicts?", tip: "Demonstrate your role in the team, conflict management, and how you contributed to the goal." },
+                        { question: "As a leader in the pharmacy profession, describe a situation where you had to motivate others to accomplish a goal?", tip: "Highlight your leadership skills and ability to inspire others towards a shared objective." },
+                        { question: "Tell me about a time when your carefully laid plans were disrupted. How did you handle the disruption?", tip: "Show your problem-solving and adaptability in the face of unexpected challenges." },
+                        { question: "Tell me about a time you found a better way of doing a task at work.", tip: "Share how you improved a process or found a more efficient way to achieve a goal." },
+                        { question: "Tell me about a time when you took on additional responsibility without being asked.", tip: "Discuss when you took initiative and how it benefited your team." },
+                        { question: "What do you consider to be your most important personal qualities?", tip: "Share the traits that you feel define your work ethic and approach to challenges." },
+                        { question: "What are some personal goals you're working on? How are you pursuing them?", tip: "Talk about your personal growth and how it complements your professional life." },
+                        { question: "What do you do to stay up to date in your field?", tip: "Demonstrate your commitment to continued learning and professional development." }
         ];
 
         function shuffle(array) {
@@ -187,62 +193,54 @@
             }
         }
 
-        shuffle(questionsWithTips);
-
         let currentIndex = 0;
-        let timer = 15;
-        let countdown;
+        let timeLeft = 15;
+        let timerInterval;
 
-        const questionElement = document.getElementById("question");
-        const tipElement = document.getElementById("pro-tip");
-        const timerElement = document.getElementById("timer");
-        const nextQuestionButton = document.getElementById("next-question-btn");
-        const addTimeButton = document.getElementById("add-time-btn");
-
-        function showQuestion() {
-            const current = questionsWithTips[currentIndex];
-            questionElement.textContent = current.question;
-            tipElement.textContent = `Pro Tip: ${current.tip}`;
-            resetTimer();
-        }
-
-        function resetTimer() {
-            clearInterval(countdown);
-            timer = 15;
-            timerElement.textContent = timer;
-            countdown = setInterval(() => {
-                timer--;
-                timerElement.textContent = timer;
-
-                if (timer <= 0) {
-                    clearInterval(countdown);
-                    currentIndex = (currentIndex + 1) % questionsWithTips.length;
-                    showQuestion();
+        function startTimer() {
+            clearInterval(timerInterval);
+            document.getElementById("timer").textContent = timeLeft;
+            timerInterval = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    document.getElementById("timer").textContent = timeLeft;
+                } else {
+                    clearInterval(timerInterval);
                 }
             }, 1000);
         }
 
+        function showNextQuestion() {
+            if (currentIndex >= questionsWithTips.length) {
+                currentIndex = 0;
+                shuffle(questionsWithTips);
+            }
+
+            const { question, tip } = questionsWithTips[currentIndex];
+            document.getElementById("question").textContent = question;
+            document.getElementById("pro-tip").textContent = "Pro Tip: " + tip;
+            currentIndex++;
+            timeLeft = 15;
+            startTimer();
+        }
+
+        document.getElementById("next-question-btn").addEventListener("click", showNextQuestion);
+        document.getElementById("add-time-btn").addEventListener("click", () => {
+            timeLeft += 15;
+            document.getElementById("timer").textContent = timeLeft;
+        });
+
         document.addEventListener("keydown", (event) => {
             if (event.key === "Enter") {
-                currentIndex = (currentIndex + 1) % questionsWithTips.length;
-                showQuestion();
+                showNextQuestion();
             } else if (event.key === " ") {
-                timer += 15;
-                timerElement.textContent = timer;
+                timeLeft += 15;
+                document.getElementById("timer").textContent = timeLeft;
             }
         });
 
-        nextQuestionButton.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % questionsWithTips.length;
-            showQuestion();
-        });
-
-        addTimeButton.addEventListener("click", () => {
-            timer += 15;
-            timerElement.textContent = timer;
-        });
-
-        showQuestion();
+        shuffle(questionsWithTips);
+        showNextQuestion();
     </script>
 </body>
 </html>
