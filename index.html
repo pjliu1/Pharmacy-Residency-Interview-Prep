@@ -193,54 +193,59 @@
             }
         }
 
-        let currentIndex = 0;
-        let timeLeft = 15;
-        let timerInterval;
+        let currentQuestionIndex = 0;
+    let timerValue = 15;
+    let timerInterval;
 
-        function startTimer() {
-            clearInterval(timerInterval);
-            document.getElementById("timer").textContent = timeLeft;
-            timerInterval = setInterval(() => {
-                if (timeLeft > 0) {
-                    timeLeft--;
-                    document.getElementById("timer").textContent = timeLeft;
-                } else {
-                    clearInterval(timerInterval);
-                }
-            }, 1000);
+    function updateQuestion() {
+        if (currentQuestionIndex < questionsWithTips.length) {
+            document.getElementById("question").textContent = questionsWithTips[currentQuestionIndex].question;
+            document.getElementById("pro-tip").textContent = "Pro Tip: " + questionsWithTips[currentQuestionIndex].tip;
+        } else {
+            document.getElementById("question").textContent = "No more questions!";
+            document.getElementById("pro-tip").textContent = "";
         }
+    }
 
-        function showNextQuestion() {
-            if (currentIndex >= questionsWithTips.length) {
-                currentIndex = 0;
-                shuffle(questionsWithTips);
+    function startTimer() {
+        clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (timerValue > 0) {
+                timerValue--;
+                document.getElementById("timer").textContent = timerValue;
+            } else {
+                clearInterval(timerInterval);
             }
+        }, 1000);
+    }
 
-            const { question, tip } = questionsWithTips[currentIndex];
-            document.getElementById("question").textContent = question;
-            document.getElementById("pro-tip").textContent = "Pro Tip: " + tip;
-            currentIndex++;
-            timeLeft = 15;
+    document.getElementById("next-question-btn").addEventListener("click", () => {
+        currentQuestionIndex++;
+        timerValue = 15;
+        updateQuestion();
+        startTimer();
+    });
+
+    document.getElementById("add-time-btn").addEventListener("click", () => {
+        timerValue += 15;
+        document.getElementById("timer").textContent = timerValue;
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.code === "Space") {
+            event.preventDefault(); // Prevents moving to the next question
+            timerValue += 15;
+            document.getElementById("timer").textContent = timerValue;
+        } else if (event.code === "Enter") {
+            currentQuestionIndex++;
+            timerValue = 15;
+            updateQuestion();
             startTimer();
         }
+    });
 
-        document.getElementById("next-question-btn").addEventListener("click", showNextQuestion);
-        document.getElementById("add-time-btn").addEventListener("click", () => {
-            timeLeft += 15;
-            document.getElementById("timer").textContent = timeLeft;
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Enter") {
-                showNextQuestion();
-            } else if (event.key === " ") {
-                timeLeft += 15;
-                document.getElementById("timer").textContent = timeLeft;
-            }
-        });
-
-        shuffle(questionsWithTips);
-        showNextQuestion();
+    updateQuestion();
+    startTimer();
     </script>
 </body>
 </html>
